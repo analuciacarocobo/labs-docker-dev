@@ -48,3 +48,19 @@ Digest: sha256:932ac36fabe1d2103ed3edbe66224ed2afe0041b317bcdb6f5d9be63594f0030
 Status: Downloaded newer image for httpd:latest
 3a0d3172277492f1110326ca0fae9ae504cea947462ed0262ca01b3f6821ac73
 
+### 3.1. Eliminar el Contenedor de Ubuntu
+ $ docker ps -a
+
+ CONTAINER ID   IMAGE     COMMAND              CREATED         STATUS                     PORTS                                   NAMES
+3a0d31722774   httpd     "httpd-foreground"   4 minutes ago   Up 4 minutes               0.0.0.0:8000->80/tcp, :::8000->80/tcp   festive_sinoussi
+ad940306d75a   ubuntu    "bash"               9 minutes ago   Exited (0) 5 minutes ago                                           ecstatic_khorana
+
+### 3.2. Eliminar Todos los Contenedores Detenidos
+ $  docker container prune -f
+
+ Deleted Containers:
+ad940306d75aef6b7d32d9d08ffd4def68b73a9758530d824e8c18f653d62c33
+
+Total reclaimed space: 5B
+
+
