@@ -64,3 +64,23 @@ ad940306d75aef6b7d32d9d08ffd4def68b73a9758530d824e8c18f653d62c33
 Total reclaimed space: 5B
 
 
+
+# output docker build 
+
+@analuciacarocobo ➜ /workspaces/labs-docker-dev (main) $ docker build -t ubuntu-updated:latest .
+[+] Building 24.3s (9/9) FINISHED                                                                               docker:default
+ => [internal] load build definition from dockerfile                                                                      0.2s
+ => => transferring dockerfile: 561B                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                          0.0s
+ => [internal] load .dockerignore                                                                                         0.2s
+ => => transferring context: 2B                                                                                           0.0s
+ => [internal] load build context                                                                                         0.3s
+ => => transferring context: 44.75kB                                                                                      0.0s
+ => [1/4] FROM docker.io/library/ubuntu:latest                                                                            0.1s
+ => [2/4] RUN apt-get update && apt-get install -y     curl     wget     vim     && apt-get clean                        21.2s
+ => [3/4] WORKDIR /app                                                                                                    0.2s
+ => [4/4] COPY . /app                                                                                                     0.3s
+ => exporting to image                                                                                                    1.5s
+ => => exporting layers                                                                                                   1.4s
+ => => writing image sha256:efe32045e4c41825fa5abf154ec40da144a4e22edbc03c759aab56ee2ebef2d4                              0.0s
+ => => naming to docker.io/library/ubuntu-updated:latest     
