@@ -121,3 +121,19 @@ ebabaef39a57d5595de62899302dbbb53e65c4fde79afccd214ff437ac86df99
  => => exporting layers                                                                                                   0.6s
  => => writing image sha256:83616a966c51fcfffaa7f4dce70ed552554b906f1b07bc4cfffb77b6aa31a658                              0.0s
  => => naming to docker.io/library/my-nginx:latest       
+
+ # workdir
+
+@analuciacarocobo ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 0.6s (6/6) FINISHED                                                                                             docker:default
+ => [internal] load build definition from dockerfile                                                                                   0.1s
+ => => transferring dockerfile: 1.15kB                                                                                                 0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                       0.0s
+ => [internal] load .dockerignore                                                                                                      0.1s
+ => => transferring context: 2B                                                                                                        0.0s
+ => [stage-2 1/2] FROM docker.io/library/ubuntu:latest                                                                                 0.0s
+ => CACHED [stage-2 2/2] RUN apt-get update && apt-get install -y nginx                                                                0.0s
+ => exporting to image                                                                                                                 0.1s
+ => => exporting layers                                                                                                                0.0s
+ => => writing image sha256:aa9d2eb6bbc732001ae1cc5ecbda5a0b5753afa99e0c0033d7839fea04d6a86e                                           0.0s
+ => => naming to docker.io/library/my-nginx:latest          
