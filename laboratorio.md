@@ -84,3 +84,24 @@ Total reclaimed space: 5B
  => => exporting layers                                                                                                   1.4s
  => => writing image sha256:efe32045e4c41825fa5abf154ec40da144a4e22edbc03c759aab56ee2ebef2d4                              0.0s
  => => naming to docker.io/library/ubuntu-updated:latest     
+
+ # construir
+
+ @analuciacarocobo ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 13.6s (6/6) FINISHED                                                                               docker:default
+ => [internal] load build definition from dockerfile                                                                      0.1s
+ => => transferring dockerfile: 876B                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                          0.0s
+ => [internal] load .dockerignore                                                                                         0.1s
+ => => transferring context: 2B                                                                                           0.0s
+ => CACHED [stage-1 1/2] FROM docker.io/library/ubuntu:latest                                                             0.0s
+ => [stage-1 2/2] RUN apt-get update &&     apt-get install -y nginx &&     apt-get clean                                12.3s
+ => exporting to image                                                                                                    0.8s
+ => => exporting layers                                                                                                   0.6s
+ => => writing image sha256:fce3cb79d3f33801657cacefe245f7742faa84a0328ee49b8f4e1746ae5f2e4e                              0.0s
+ => => naming to docker.io/library/my-nginx:latest   
+
+ # ejecutar  
+
+ @analuciacarocobo ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 80:80 my-nginx:latest
+ebabaef39a57d5595de62899302dbbb53e65c4fde79afccd214ff437ac86df99
